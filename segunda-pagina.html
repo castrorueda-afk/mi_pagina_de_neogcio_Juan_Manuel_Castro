@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios y Pedidos - BurgerLab</title>
+    <meta name="description" content="Consulta nuestra lista completa de precios, combos, adiciones y haz tu pedido online en BurgerLab.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+
+    <header class="header">
+        <div class="logo-container">
+            <span class="logo-text">🍔 Burger<strong>Lab</strong></span>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#productos">Menú</a></li>
+                <li><a href="index.html#opiniones">Opiniones</a></li>
+                <li><a href="index.html#contacto-mapa">Ubicación</a></li>
+                <li><a href="segunda-pagina.html" class="btn-nav">Precios y Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="main-pedido">
+        <h1>Precios, Combos y Pedidos Online</h1>
+        <p>Planifica tu pedido consultando nuestras tarifas oficiales y completa el formulario para recibirlo en casa o tenerlo listo en el local.</p>
+
+
+        <section class="seccion-tabla">
+            <h2>Tabla de Tarifas y Combos</h2>
+            <div class="tabla-container">
+                <table class="tabla-precios">
+                    <caption>Menú de Precios y Paquetes - BurgerLab</caption>
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Producto / Combo</th>
+                            <th>Descripción</th>
+                            <th>Precio (COP)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Hamburguesas Individuales</td>
+                            <td>La Clásica Lab</td>
+                            <td>Carne 100% res, queso cheddar, tocino y vegetales</td>
+                            <td>$22.000</td>
+                        </tr>
+                        <tr>
+                            <td>Smokehouse BBQ</td>
+                            <td>Doble carne, provolone, aros de cebolla y salsa BBQ</td>
+                            <td>$27.000</td>
+                        </tr>
+                        <tr>
+                            <td>Opción Veggie</td>
+                            <td>Green Garden</td>
+                            <td>Medallón de lentejas, champiñones y queso vegetal</td>
+                            <td>$24.000</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><strong>Adición de Papas rústicas y Gaseosa en combo (para cualquiera)</strong></td>
+                            <td><strong>+ $9.000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="seccion-formulario">
+            <h2>Haz tu Pedido o Contacta con Nosotros</h2>
+            <form action="#" method="POST" class="formulario-pedido">
+                
+                <div class="form-grupo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="telefono">Teléfono / WhatsApp:</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="3001234567">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="fecha-entrega">Fecha para el pedido:</label>
+                    <input type="date" id="fecha-entrega" name="fecha_entrega">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="producto-elegido">Selecciona tu producto:</label>
+                    <select id="producto-elegido" name="producto_elegido">
+                        <option value="clasica">La Clásica Lab ($22.000)</option>
+                        <option value="bbq">Smokehouse BBQ ($27.000)</option>
+                        <option value="veggie">Green Garden Veggie ($24.000)</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="comentarios">Observaciones o dirección de entrega:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" placeholder="Indica si tienes alguna alergia, dirección exacta o instrucciones especiales..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal">Enviar Pedido</button>
+            </form>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2026 BurgerLab. Todos los derechos reservados. Creado con fines académicos.</p>
+    </footer>
+
+</body>
+</html>
