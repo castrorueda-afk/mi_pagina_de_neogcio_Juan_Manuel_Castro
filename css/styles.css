@@ -1,14 +1,15 @@
 
 :root {
-    --color-primario: #1a1a1a;
-    --color-secundario: #ff4757;
-    --color-secundario-alfa: rgba(255, 71, 87, 0.15);
-    --color-acento: #ffa502;
-    --color-fondo: #f8f9fa;
-    --color-blanco: #ffffff;
-    --color-texto: #333333;
-    --color-gris-claro: #e9ecef;
-    --fuente-principal: 'Segoe UI', Arial, sans-serif;
+    --color-primario: #0d0d0d;
+    --color-secundario: #ff0033; /* Rojo neón rockero */
+    --color-secundario-alfa: rgba(255, 0, 51, 0.2);
+    --color-acento: #ffcc00;     /* Amarillo eléctrico / rayo */
+    --color-fondo: #141414;      /* Fondo oscuro general */
+    --color-blanco: #f5f5f5;
+    --color-texto: #cccccc;
+    --color-gris-oscuro: #1e1e1e;
+    --color-gris-claro: #2a2a2a;
+    --fuente-principal: 'Impact', 'Arial Black', sans-serif;
     --transicion: all 0.3s ease;
 }
 
@@ -19,7 +20,7 @@
 }
 
 body {
-    font-family: var(--fuente-principal);
+    font-family: Arial, sans-serif; 
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
@@ -37,17 +38,26 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 4px solid var(--color-secundario);
+    border-bottom: 3px solid var(--color-secundario);
+    box-shadow: 0 4px 15px rgba(255, 0, 51, 0.3);
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-family: var(--fuente-principal);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-blanco);
 }
 
 .logo-text strong {
-    color: var(--color-secundario);
+    color: var(--color-acento);
+}
+
+
+.logo-text::before {
+    content: "⚡ ";
+    color: var(--color-acento);
 }
 
 .nav-list {
@@ -65,13 +75,15 @@ body {
     color: var(--color-blanco);
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 1px;
     transition: var(--transicion);
 }
 
 .nav-list a:hover {
     color: var(--color-acento);
+    text-shadow: 0 0 8px var(--color-acento);
 }
 
 .nav-list a:focus-visible {
@@ -83,32 +95,36 @@ body {
     background-color: var(--color-secundario);
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    color: #fff !important;
 }
 
 .btn-nav:hover {
-    background-color: #e84118;
-    color: var(--color-blanco);
+    background-color: #cc0029;
+    box-shadow: 0 0 10px var(--color-secundario);
 }
 
 
 .hero {
-
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), var(--color-secundario-alfa)), 
+    background: linear-gradient(135deg, rgba(13, 13, 13, 0.95), var(--color-secundario-alfa)), 
                 url('../images/hero-bg.jpg') center/cover no-repeat;
     color: var(--color-blanco);
     text-align: center;
     padding: 5rem 1rem;
-    margin: 0 auto;
+    margin: 2rem auto;
     max-width: 1200px;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid var(--color-gris-claro);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-family: var(--fuente-principal);
+    font-size: 3rem;
     margin-bottom: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    color: var(--color-blanco);
+    text-shadow: 3px 3px 0px var(--color-secundario);
     animation: fadeInDown 1s ease-in-out;
 }
 
@@ -116,24 +132,28 @@ body {
     font-size: 1.1rem;
     max-width: 700px;
     margin: 0 auto 1.5rem auto;
+    color: var(--color-texto);
 }
 
 .btn-principal {
     display: inline-block;
     background-color: var(--color-acento);
     color: var(--color-primario);
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
+    padding: 0.75rem 1.75rem;
+    border-radius: 4px;
     text-decoration: none;
-    font-weight: bold;
+    font-family: var(--fuente-principal);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
     transition: var(--transicion);
-    border: 2px solid #d35400;
+    border: 2px solid #b38f00;
 }
 
 .btn-principal:hover {
-    background-color: #f39c12;
+    background-color: #ffdb4d;
     transform: scale(1.05);
+    box-shadow: 0 0 15px var(--color-acento);
 }
 
 
@@ -144,10 +164,13 @@ body {
 }
 
 .productos-seccion h2, .info-util h2, .opiniones-seccion h2, .ubicacion-seccion h2, .seccion-tabla h2, .seccion-formulario h2 {
+    font-family: var(--fuente-principal);
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 2rem;
-    color: var(--color-primario);
+    color: var(--color-blanco);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .tarjetas-container {
@@ -158,26 +181,26 @@ body {
 }
 
 .tarjeta {
-    background-color: var(--color-blanco);
+    background-color: var(--color-gris-oscuro);
     border: 1px solid var(--color-gris-claro);
-    border-top: 5px solid var(--color-primario);
+    border-top: 5px solid var(--color-acento);
     border-radius: 8px;
     width: 300px;
     padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     transition: var(--transicion);
     overflow: hidden;
 }
 
 .tarjeta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+    border-color: var(--color-secundario);
+    box-shadow: 0 10px 25px rgba(255, 0, 51, 0.2);
 }
-
 
 .tarjeta--promo {
     border-top-color: var(--color-secundario);
-    background-color: #fff9f9;
+    background-color: #1a1214;
 }
 
 .tarjeta img {
@@ -186,52 +209,58 @@ body {
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1rem;
+    border: 1px solid var(--color-gris-claro);
 }
 
 .tarjeta h3 {
-    font-size: 1.3rem;
+    font-family: var(--fuente-principal);
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    color: var(--color-primario);
+    color: var(--color-blanco);
+    letter-spacing: 1px;
 }
 
 .tarjeta p {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--color-texto);
     margin-bottom: 1rem;
 }
 
 .tarjeta .precio {
+    font-family: var(--fuente-principal);
     font-weight: bold;
-    font-size: 1.1rem;
-    color: var(--color-secundario);
+    font-size: 1.2rem;
+    color: var(--color-acento);
 }
+
 
 input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ccc;
+    background-color: var(--color-primario);
+    border: 1px solid var(--color-gris-claro);
+    color: var(--color-blanco);
     border-radius: 4px;
-    font-family: var(--fuente-principal);
     font-size: 1rem;
     transition: var(--transicion);
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: var(--color-secundario);
+    border-color: var(--color-acento);
     outline: none;
-    box-shadow: 0 0 5px var(--color-secundario-alfa);
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
 }
-
 
 .listas-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: space-around;
-    background-color: var(--color-blanco);
+    background-color: var(--color-gris-oscuro);
     padding: 2rem;
     border-radius: 8px;
-    border-left: 5px solid var(--color-acento);
+    border-left: 5px solid var(--color-secundario);
+    border: 1px solid var(--color-gris-claro);
 }
 
 .listas-grid div {
@@ -240,21 +269,23 @@ input:focus, select:focus, textarea:focus {
 }
 
 .listas-grid h3 {
+    font-family: var(--fuente-principal);
     margin-bottom: 1rem;
-    color: var(--color-primario);
+    color: var(--color-blanco);
+    letter-spacing: 1px;
 }
 
 .listas-grid ul, .listas-grid ol {
     padding-left: 1.5rem;
+    color: var(--color-texto);
 }
 
 .listas-grid li {
     margin-bottom: 0.5rem;
 }
 
-
 .listas-grid ul li:nth-child(even) {
-    color: #555;
+    color: var(--color-acento);
     font-style: italic;
 }
 
@@ -271,38 +302,37 @@ input:focus, select:focus, textarea:focus {
 }
 
 blockquote {
-    background-color: var(--color-blanco);
+    background-color: var(--color-gris-oscuro);
     border-left: 4px solid var(--color-acento);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
     width: 450px;
     position: relative;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-gris-claro);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 blockquote p {
     font-style: italic;
     margin-bottom: 1rem;
+    color: var(--color-blanco);
 }
 
 blockquote footer {
     font-size: 0.9rem;
     font-weight: bold;
-    color: var(--color-primario);
+    color: var(--color-acento);
     text-align: right;
 }
 
-
 blockquote::before {
-    content: "“";
-    font-size: 4rem;
-    color: var(--color-acento);
+    content: "⚡";
+    font-size: 2rem;
     position: absolute;
-    top: -10px;
+    top: 10px;
     left: 10px;
-    opacity: 0.3;
+    opacity: 0.2;
 }
-
 
 .tabla-container {
     overflow-x: auto;
@@ -311,40 +341,47 @@ blockquote::before {
 .tabla-precios {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--color-blanco);
+    background-color: var(--color-gris-oscuro);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-gris-claro);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .tabla-precios caption {
+    font-family: var(--fuente-principal);
     font-weight: bold;
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: var(--color-blanco);
+    letter-spacing: 1px;
 }
 
 .tabla-precios th, .tabla-precios td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid var(--color-gris-claro);
+    color: var(--color-texto);
 }
 
 .tabla-precios th {
     background-color: var(--color-primario);
+    color: var(--color-acento);
+    font-family: var(--fuente-principal);
+    letter-spacing: 1px;
+}
+
+.tabla-precios tbody tr:hover td {
+    background-color: var(--color-secundario-alfa);
     color: var(--color-blanco);
 }
 
-/* Combinador y pseudoclase en tabla */
-.tabla-precios tbody tr:hover td {
-    background-color: var(--color-secundario-alfa);
-}
-
-
 .formulario-pedido {
-    background-color: var(--color-blanco);
+    background-color: var(--color-gris-oscuro);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-gris-claro);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     max-width: 700px;
     margin: 0 auto;
 }
@@ -357,14 +394,12 @@ blockquote::before {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--color-primario);
+    color: var(--color-blanco);
 }
-
 
 .form-grupo:focus-within label {
-    color: var(--color-secundario);
+    color: var(--color-acento);
 }
-
 
 .ubicacion-seccion {
     text-align: center;
@@ -374,7 +409,8 @@ blockquote::before {
     margin-top: 1.5rem;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 2px solid var(--color-gris-claro);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .footer {
@@ -383,9 +419,8 @@ blockquote::before {
     text-align: center;
     padding: 1.5rem;
     margin-top: 4rem;
-    border-top: 4px solid var(--color-acento);
+    border-top: 3px solid var(--color-acento);
 }
-
 
 @keyframes fadeInDown {
     from {
@@ -412,7 +447,7 @@ blockquote::before {
     }
 
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
 
     .tarjeta {
